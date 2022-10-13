@@ -37,7 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+
+    # 3rd party
+    'crispy_forms',
+
+    # Local
     'accounts',
+    'pages',
 ]
 
 MIDDLEWARE = [
@@ -122,3 +129,11 @@ STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'accounts.CustomUser'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'tyler.sage@umconnect.umt.edu'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
